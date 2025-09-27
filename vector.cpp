@@ -21,6 +21,13 @@ Tensor add(const Tensor& A, const Tensor& B) {
     }
     return Y;
 }
+Tensor transpose(const Tensor& X) {
+    Tensor Y(X.cols, X.rows);
+    for (size_t i = 0; i < X.rows; ++i)
+        for (size_t j = 0; j < X.rows; ++j)
+            Y(j, i) = X(i, j);
+    return Y;
+}
 int main(){
     Tensor A(2, 3);
     Tensor B(2, 3);
@@ -28,10 +35,12 @@ int main(){
     A(1, 0) = 4.0; A(1, 1) = 5.0; A(1, 2) = 6.0;
     B(0, 0) = 10.0; B(0, 1) = 20.0; B(0, 2) = 30.0;
     B(1, 0) = 40.0; B(1, 1) = 50.0; B(1, 2) = 60.0;
-    Tensor C = add(A, B);
-    for (int i = 0; i < C.rows; ++i) {
-        for (int j = 0; j < C.cols; ++j) {
-            std::cout << C(i, j) << " ";    
+    Tensor C = transpose(A); 
+    Tensor c = add(C, B);
+
+    for (int i = 0; i < c.rows; ++i) {
+        for (int j = 0; j < c.cols; ++j) {
+            std::cout << c(i, j) << " ";    
         }
     }
     std::cout << std::endl;
