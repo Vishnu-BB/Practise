@@ -126,11 +126,30 @@ using namespace std;
 //         return d;
 //     }
 // };
+#include <set>
+#include <map>
+
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        map<int, int> fre;
+        vector<int> d;
+        for(int n: nums){
+            fre[n]+=1;
+        }
+        for(int i = 1; i<nums.size(); i++){
+            // if(fre.find(i) == fre.end()){
+            //     d.push_back(i);
+            // }
+        }
+        return d;
+    }
+};
 
 int main(){
     Solution ss;
-    vector<int> s = {8,1,2,2,3};
-    vector<int> sa = ss.smallerNumbersThanCurrent(s);
+    vector<int> s = {1,1};
+    vector<int> sa = ss.findDisappearedNumbers(s);
     for(int i = 0; i < s.size(); i++){
         cout<<sa[i];
     }
