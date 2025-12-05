@@ -5,6 +5,8 @@
 #include <string>
 #include <utility>
 #include <vector>
+
+using namespace std;
 // void fun(std::string name, int age);
 
 // double square(int a);
@@ -314,8 +316,10 @@ int main() {
   // for (int i = 0; i < size; i++) {
   //   std::cout << pgrades[i];
   // }
-  +
   
+  // int x = 4;
+  // int *px = &x;
+  // cout<<*px<< " "<<px;
  
 
   return 0;

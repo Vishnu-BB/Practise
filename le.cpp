@@ -54,26 +54,86 @@
 //     return 0;
 // }
 
-using std::string;
+using namespace std;
 
-class Solution {
-public:
-    int idx=0;
-    int strStr(string haystack, string needle) {
-        for(int j = 0; j < needle.length(); j++){
-            for(int i = 0; i < haystack.length(); i++){
-                if(haystack[i]==needle[j]){
-                    std::cout<<i;
-                }
-            }
-        }
-        return -1;
-    }
+// class Solution {
+// public:
+//     int idx=0;
+//     int strStr(string haystack, string needle) {
+//         for(int j = 0; j < needle.length(); j++){
+//             for(int i = 0; i < haystack.length(); i++){
+//                 if(haystack[i]==needle[j]){
+//                     std::cout<<i;
+//                 }
+//             }
+//         }
+//         return -1;
+//     }
  
-};
+// };
+
+// int main(){
+//     Solution s;
+//     s.strStr("butsaid", "sad");
+//     return 0;
+// }
+#include <algorithm>
+// class Solution {
+// public:
+    
+
+//     int singleNumber(vector<int>& nums) {
+//         size_t s = nums.size();
+//         // for (int i = 0; i<s; i++){
+//         //     cout<<nums[i]<<"\n";
+//         // }
+//         cout<<'\n';
+//         sort(nums.begin(), nums.end());
+//         int c = 0;
+//         for (int i = 0; i<s; i++){
+//             c = c ^ nums[i];
+//             // cout<<nums[i]<<"\n";
+//         }
+
+//         return c;
+        
+//     }
+// };
+
+// int main(){
+//     Solution ss;
+//     vector<int> nums = {3, 4, 4, 6, 7 ,7, 3};
+//     cout<<ss.singleNumber(nums);
+
+//     return 0;
+// }
+
+// #include <iomanip>
+
+// class Solution {
+// public:
+//     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+//         vector<int> d;
+//         for(int i = 0; i < nums.size(); i++){
+//             int c = 0;
+//             for(int j = 0; j < nums.size(); j++){
+//                 if(nums[j] < nums[i]){
+//                     c++;
+//                 }  
+//             } 
+//             d.push_back(c); 
+//         }
+//         return d;
+//     }
+// };
 
 int main(){
-    Solution s;
-    s.strStr("butsaid", "sad");
+    Solution ss;
+    vector<int> s = {8,1,2,2,3};
+    vector<int> sa = ss.smallerNumbersThanCurrent(s);
+    for(int i = 0; i < s.size(); i++){
+        cout<<sa[i];
+    }
+    
     return 0;
 }
