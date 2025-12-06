@@ -96,41 +96,43 @@ using namespace std;
 //         return d;
 //     }
 // };
-class Solution {
-public:
-    vector<int> findErrorNums(vector<int>& nums) {
-        vector<int> d;
-        vector<int> d1;
+// class Solution {
+// public:
+//     vector<int> findErrorNums(vector<int>& nums) {
+//         vector<int> d;
+//         vector<int> d1;
         
 
-        for(int i = 0; i < nums.size(); i++){
-            int c = 0;
-            for(int j = 0; j < nums.size(); j++){
-                if(nums[i] == nums[j]){
-                    c++;
-                }
-            }
-            d.push_back(c);
-        }
-        for(int i = 0; i < nums.size(); i++){
-            if(d[i] == 2){
-                d1.push_back(nums[i]);
-                d.pop_back(nums[i]);
-                break;
-            }
-        }
-        int n = 0;
-        for(int i = 0; i < nums.size()+1; i++){
-            n += i; 
-        }
-        int num = 0;
-        for(int i = 0; i < nums.size(); i++){
-            num += nums[i];
-        }
-        d1.push_back(abs(num));
-        return d1;
-    }
-};
+//         for(int i = 0; i < nums.size(); i++){
+//             int c = 0;
+//             for(int j = 0; j < nums.size(); j++){
+//                 if(nums[i] == nums[j]){
+//                     c++;
+//                 }
+//             }
+//             d.push_back(c);
+//         }
+//         for(int i = 0; i < nums.size(); i++){
+//             if(d[i] == 2){
+//                 d1.push_back(nums[i]);
+//                 d.pop_back(nums[i]);
+//                 break;
+//             }
+//         }
+//         int n = 0;
+//         for(int i = 0; i < nums.size()+1; i++){
+//             n += i; 
+//         }
+//         int num = 0;
+//         for(int i = 0; i < nums.size(); i++){
+//             num += nums[i];
+//         }
+//         d1.push_back(abs(num));
+//         return d1;
+//     }
+// };
+
+
 int main(){
     Solution ss;
     vector<int> s = {1, 2, 2, 4};
