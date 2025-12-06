@@ -58,87 +58,24 @@ using namespace std;
 
 // using std::string;
 
-// class Solution {
-// public:
-//     int idx=0;
-//     int strStr(string haystack, string needle) {
-//         for(int j = 0; j < needle.length(); j++){
-//             for(int i = 0; i < haystack.length(); i++){
-//                 if(haystack[i]==needle[j]){
-//                     std::cout<<i;
-//                 }
-//             }
-//         }
-//         return -1;
-//     }
+class Solution {
+public:
+    int idx=0;
+    int strStr(string haystack, string needle) {
+        for(int j = 0; j < needle.length(); j++){
+            for(int i = 0; i < haystack.length(); i++){
+                if(haystack[i]==needle[j]){
+                    std::cout<<i;
+                }
+            }
+        }
+        return -1;
+    }
  
-// };
-
-// int main(){
-//     Solution s;
-//     s.strStr("butsaid", "sad");
-//     return 0;
-// }
-
-// class Solution {
-// public:
-//     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-//         vector<int> d;
-//         for(int i = 0; i < nums.size(); i++){
-//             int c = 0;
-//             for(int j = 0; j < nums.size(); j++){
-//                 if(nums[i]>nums[j]){
-//                     c++;
-//                 }
-//             }
-//             d.push_back(c);
-//         }
-//         return d;
-//     }
-// };
-// class Solution {
-// public:
-//     vector<int> findErrorNums(vector<int>& nums) {
-//         vector<int> d;
-//         vector<int> d1;
-        
-
-//         for(int i = 0; i < nums.size(); i++){
-//             int c = 0;
-//             for(int j = 0; j < nums.size(); j++){
-//                 if(nums[i] == nums[j]){
-//                     c++;
-//                 }
-//             }
-//             d.push_back(c);
-//         }
-//         for(int i = 0; i < nums.size(); i++){
-//             if(d[i] == 2){
-//                 d1.push_back(nums[i]);
-//                 d.pop_back(nums[i]);
-//                 break;
-//             }
-//         }
-//         int n = 0;
-//         for(int i = 0; i < nums.size()+1; i++){
-//             n += i; 
-//         }
-//         int num = 0;
-//         for(int i = 0; i < nums.size(); i++){
-//             num += nums[i];
-//         }
-//         d1.push_back(abs(num));
-//         return d1;
-//     }
-// };
-
+};
 
 int main(){
-    Solution ss;
-    vector<int> s = {1, 2, 2, 4};
-    vector<int> sa = ss.findErrorNums(s);
-    for(int i = 0; i < sa.size(); i++){
-        cout<<sa[i];
-    }
+    Solution s;
+    s.strStr("butsaid", "sad");
     return 0;
 }

@@ -5,6 +5,8 @@
 #include <string>
 #include <utility>
 #include <vector>
+
+using namespace std;
 // void fun(std::string name, int age);
 
 // double square(int a);
@@ -316,8 +318,11 @@ int main() {
   // }
   
   
+  // int x = 4;
+  // int *px = &x;
+  // cout<<*px<< " "<<px;
  
-
+  int first[] = { 5, 10, 15, 20, 25 };
   return 0;
 }
 // void swap (std::string &x, std::string &y){
