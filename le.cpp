@@ -28,6 +28,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 // std::vector<int> twoSum(const std::vector<int>& nums, int target) {
 //     for (int i = 0; i < nums.size(); i++) {
 //         for (int j = i + 1; j < nums.size(); j++) {
@@ -54,7 +56,7 @@
 //     return 0;
 // }
 
-using namespace std;
+// using std::string;
 
 // class Solution {
 // public:
@@ -72,58 +74,26 @@ using namespace std;
  
 // };
 
-// int main(){
-//     Solution s;
-//     s.strStr("butsaid", "sad");
-//     return 0;
-// }
-#include <algorithm>
+// #include <algorithm>
+
 // class Solution {
 // public:
-    
-
-//     int singleNumber(vector<int>& nums) {
-//         size_t s = nums.size();
-//         // for (int i = 0; i<s; i++){
-//         //     cout<<nums[i]<<"\n";
-//         // }
-//         cout<<'\n';
-//         sort(nums.begin(), nums.end());
+//     vector<string> buildArray(vector<int>& target, int n) {
+//         vector<string> p;
 //         int c = 0;
-//         for (int i = 0; i<s; i++){
-//             c = c ^ nums[i];
-//             // cout<<nums[i]<<"\n";
+//         for(int i : target){
+//             c = max(i, c);
 //         }
-
-//         return c;
-        
-//     }
-// };
-
-// int main(){
-//     Solution ss;
-//     vector<int> nums = {3, 4, 4, 6, 7 ,7, 3};
-//     cout<<ss.singleNumber(nums);
-
-//     return 0;
-// }
-
-// #include <iomanip>
-
-// class Solution {
-// public:
-//     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-//         vector<int> d;
-//         for(int i = 0; i < nums.size(); i++){
-//             int c = 0;
-//             for(int j = 0; j < nums.size(); j++){
-//                 if(nums[j] < nums[i]){
-//                     c++;
-//                 }  
-//             } 
-//             d.push_back(c); 
+//         sort(target.begin(), target.end());
+//         for(int i = 0; i < c; i++){
+//             p.push_back("push");
+//             if((i+1) != target[i]){
+//                 cout<<i+1<< "  " <<target[i]<<'\n';
+//                 target.insert(target.begin()+i, target[i]);
+//                 p.push_back("pop");
+//             }
 //         }
-//         return d;
+//         return p;
 //     }
 // };
 // #include <set>
