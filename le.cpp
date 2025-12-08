@@ -126,33 +126,70 @@ using namespace std;
 //         return d;
 //     }
 // };
-#include <set>
-#include <map>
+// #include <set>
+// #include <map>
 
+// class Solution {
+// public:
+//     vector<int> findDisappearedNumbers(vector<int>& nums) {
+//         map<int, int> fre;
+//         vector<int> d;
+//         for(int n: nums){
+//             fre[n]+=1;
+//         }
+//         for(int i = 1; i<nums.size(); i++){
+//             // if(fre.find(i) == fre.end()){
+//             //     d.push_back(i);
+//             // }
+//         }
+//         return d;
+//     }
+// };
+
+// class Solution {
+//   public:
+//   int i = 1;
+//     void printNumbers(int i, int n) {
+//         // Your code goes here
+//         cout<<i<<'\n';
+//         if(i < n){
+//             printNumbers(i++, n);
+//         }
+//     }    
+// };
+#include <stack>
 class Solution {
 public:
-    vector<int> findDisappearedNumbers(vector<int>& nums) {
-        map<int, int> fre;
-        vector<int> d;
-        for(int n: nums){
-            fre[n]+=1;
+    stack<char> isValid(string s) {
+        stack<char> p;
+        for(char c:s){
+            if(c == '(' || c == '[' || c == '{'){
+                p.push(c);
+                 
+            }
+            else{
+                p.pop();
+                // // else if(p.top() == '[' && c == ']'){
+                // //     p.pop();
+                // // }else if(p.top() == '{' && c == '}'){
+                // //     p.pop();
+                // // }
+                // else{
+                //     return false;
+                // }
+            }
+            
         }
-        for(int i = 1; i<nums.size(); i++){
-            // if(fre.find(i) == fre.end()){
-            //     d.push_back(i);
-            // }
-        }
-        return d;
+        
+        return p;
     }
 };
 
 int main(){
     Solution ss;
-    vector<int> s = {1,1};
-    vector<int> sa = ss.findDisappearedNumbers(s);
-    for(int i = 0; i < s.size(); i++){
-        cout<<sa[i];
-    }
+    string s = "((({[[]]})))))";
+    ss.isValid(s);
+
     
     return 0;
 }
