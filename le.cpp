@@ -157,39 +157,3 @@ using namespace std;
 //         }
 //     }    
 // };
-#include <stack>
-class Solution {
-public:
-    stack<char> isValid(string s) {
-        stack<char> p;
-        for(char c:s){
-            if(c == '(' || c == '[' || c == '{'){
-                p.push(c);
-                 
-            }
-            else{
-                p.pop();
-                // // else if(p.top() == '[' && c == ']'){
-                // //     p.pop();
-                // // }else if(p.top() == '{' && c == '}'){
-                // //     p.pop();
-                // // }
-                // else{
-                //     return false;
-                // }
-            }
-            
-        }
-        
-        return p;
-    }
-};
-
-int main(){
-    Solution ss;
-    string s = "((({[[]]})))))";
-    ss.isValid(s);
-
-    
-    return 0;
-}
