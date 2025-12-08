@@ -97,14 +97,51 @@ using namespace std;
 //     }
 // };
 
+// class Solution {
+// public:
+//     string longestPalindrome(string s) {
+//         string a = "";
+//         int i = 0;
+//         int j = s.length();
+//         while(i < j){
+            
+//             a += s[i];
+//             i++;
+//             j--;
+//         }
+//         return a;
+//     }
+// };
+class Solution {
+public:
+    bool isHappy(int n) {
+        
+        while((n*n) > 10){
+            int s = 0;
+            int sum = 0;
+            
+            s = n % 10;
+            cout<<s<<'\n';
+            sum += s*s;
+            
+            // cout<<n<<'\n';
+            // cout<<sum<<'\n';
+        }
+        if(n == 1){
+            return true;
+        }//else{
+        //     return false;
+        // }
+        return false;
+    }
+};
 
 int main(){
-    Solution s;
-    vector<int> target = {2, 3, 4};
-    int c = 4;
-    vector<string> ss = s.buildArray(target, c);
-    for(string i : ss){
-        cout<<i<<'\n';
-    }
+    Solution ss;
+    int s = 19;
+    cout<<ss.isHappy(s);
+    // for(string i : ss){
+    //     cout<<i<<'\n';
+    // }
     return 0;
 }
