@@ -96,37 +96,55 @@ using namespace std;
 //         return p;
 //     }
 // };
-// #include <set>
-// #include <map>
 
 // class Solution {
 // public:
-//     vector<int> findDisappearedNumbers(vector<int>& nums) {
-//         map<int, int> fre;
-//         vector<int> d;
-//         for(int n: nums){
-//             fre[n]+=1;
+//     string longestPalindrome(string s) {
+//         string a = "";
+//         int i = 0;
+//         int j = s.length();
+//         while(i < j){
+            
+//             a += s[i];
+//             i++;
+//             j--;
 //         }
-//         for(int i = 1; i<nums.size(); i++){
-//             // if(fre.find(i) == fre.end()){
-//             //     d.push_back(i);
-//             // }
-//         }
-//         return d;
+//         return a;
 //     }
 // };
+class Solution {
+public:
+    bool isHappy(int n) {
+        
+        while((n*n) > 10){
+            int s = 0;
+            int sum = 0;
+            
+            s = n % 10;
+            cout<<s<<'\n';
+            sum += s*s;
+            
+            // cout<<n<<'\n';
+            // cout<<sum<<'\n';
+        }
+        if(n == 1){
+            return true;
+        }//else{
+        //     return false;
+        // }
+        return false;
+    }
+};
 
-// class Solution {
-//   public:
-//   int i = 1;
-//     void printNumbers(int i, int n) {
-//         // Your code goes here
-//         cout<<i<<'\n';
-//         if(i < n){
-//             printNumbers(i++, n);
-//         }
-//     }    
-// };
+int main(){
+    Solution ss;
+    int s = 19;
+    cout<<ss.isHappy(s);
+    // for(string i : ss){
+    //     cout<<i<<'\n';
+    // }
+    return 0;
+}
 
 class Solution {
 public:
