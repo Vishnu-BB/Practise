@@ -127,3 +127,26 @@ using namespace std;
 //         }
 //     }    
 // };
+
+class Solution {
+public:
+    int isHappy(int n) {
+       int s = 0;
+       int sum = 0;
+    for(int i = 0; i < 2; i++){
+        s = n % 10;
+        // cout<<s<<'\n';
+        sum += s*s;
+        cout<<s<<'\n';
+        n = n / 10;
+        
+    }
+        return sum;
+    }
+};
+
+int main(){
+    Solution ss;
+    int s = 19;
+    cout<<ss.isHappy(s);
+}
