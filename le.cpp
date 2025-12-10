@@ -193,3 +193,64 @@ using namespace std;
 //     vector<int> s = {-214748364,-2147483647, -21483648};
 //     cout<<ss.findPeakElement(s);
 // }
+#include <cmath>
+
+// class Solution {
+// public:
+//     int reverse(int x) {
+//         if(x > 1073741824){
+//             return 0;
+//         }
+//         long sum = 0;
+//         long b = abs(x);
+//         string a = to_string(b);
+//         int i = a.length()-1;
+        
+//         while(b > 0){
+//             long r = b % 10;
+//             sum += r*(pow(10,i));
+//             b /= 10;
+//             i--;
+//         }
+//         if(x < 0){
+//             return sum*-1;
+//         }
+//     return sum;
+//     }
+// };
+#include <cstdint>
+
+class Solution {
+public:
+    int reverse(int x) {
+
+        if(x > 2147483647 || x < -2147483648){
+            return 0;
+        }
+        long sum = 0;
+        int b = x;
+        if(x < 0){ b = x*-1; }
+        string a = to_string(b);
+        int i = a.length()-1;
+        
+        while(b > 0){
+            long r = b % 10;
+            sum += r*(pow(10,i));
+            b /= 10;
+            i--;
+        }
+        if(sum > 2147483647 || sum < -2147483648){
+            return 0;
+        }
+        // if(x < 0){
+        //     return sum*-1;
+        // }
+    return sum;
+    }
+};
+int main(){
+    Solution ss;
+    int a = 1534236469;
+    cout<<ss.reverse(a);
+    return 0;
+}
