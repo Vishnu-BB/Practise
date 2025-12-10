@@ -112,59 +112,84 @@ using namespace std;
 //         return a;
 //     }
 // };
-class Solution {
-public:
-    bool isHappy(int n) {
+
+// #include <map>
+
+// class Solution {
+// public:
+//     bool isHappy(int n) {
+//         map<int, int> p;
+//         while(n != 1 && p.find(n) != p.end()){
+//             int a = happy(n);
+//             p[n] = a;
+//             n = a;
+//         }
+//         return n == 1;
+//     }
+//     int happy(int b){
+//         int s = 0;
+//         while(b>0){
+//             int r = b % 10;
+//             s += r * r;
+//             b /= 10;
+//         }
+//         return s;
+//     }
+// };
+
+// int main(){
+//     Solution ss;
+//     int s = 19;
+//     int as = ss.happy(s);
+//     cout<<ss.isHappy(as);
+//     // for(string i : ss){
+//     //     cout<<i<<'\n';
+//     // }
+//     return 0;
+// }
+
+// class Solution {
+// public:
+//     int isHappy(int n) {
+//        int s = 0;
+//        int sum = 0;
+//     for(int i = 0; i < 2; i++){
+//         s = n % 10;
+//         // cout<<s<<'\n';
+//         sum += s*s;
+//         cout<<s<<'\n';
+//         n = n / 10;
         
-        while((n*n) > 10){
-            int s = 0;
-            int sum = 0;
-            
-            s = n % 10;
-            cout<<s<<'\n';
-            sum += s*s;
-            
-            // cout<<n<<'\n';
-            // cout<<sum<<'\n';
-        }
-        if(n == 1){
-            return true;
-        }//else{
-        //     return false;
-        // }
-        return false;
-    }
-};
+//     }
+//         return sum;
+//     }
+// };
 
-int main(){
-    Solution ss;
-    int s = 19;
-    cout<<ss.isHappy(s);
-    // for(string i : ss){
-    //     cout<<i<<'\n';
-    // }
-    return 0;
-}
+// int main(){
+//     Solution ss;
+//     int s = 19;
+//     cout<<ss.isHappy(s);
+// }
 
-class Solution {
-public:
-    int isHappy(int n) {
-       int s = 0;
-       int sum = 0;
-    for(int i = 0; i < 2; i++){
-        s = n % 10;
-        // cout<<s<<'\n';
-        sum += s*s;
-        cout<<s<<'\n';
-        n = n / 10;
-        
-    }
-        return sum;
-    }
-};
+// class Solution {
+// public:
+//     int findPeakElement(vector<int>& nums) {
+//         int c;
+//         int ma = -2147483648;
+//         for(int i = 0; i < nums.size(); i++){
+//             ma = max(nums[i], ma);
+//         }
+//         for(int i = 0; i < nums.size(); i++){
+//             if(ma == nums[i]){
+//                 return i;
+//             }
+//         }
+//         return 5;
+//     }
+// };
 
-int main(){
-    Solution ss;
-    int s = 19;
-    cout<<ss.isHappy(s);
-}
+// int main(){
+//     Solution ss;
+//     vector<int> s = {-214748364,-2147483647, -21483648};
+//     cout<<ss.findPeakElement(s);
+// }
