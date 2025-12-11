@@ -223,34 +223,26 @@ using namespace std;
 class Solution {
 public:
     int reverse(int x) {
-
-        if(x > 2147483647 || x < -2147483648){
-            return 0;
-        }
-        long sum = 0;
-        int b = x;
-        if(x < 0){ b = x*-1; }
-        string a = to_string(b);
-        int i = a.length()-1;
-        
-        while(b > 0){
-            long r = b % 10;
-            sum += r*(pow(10,i));
-            b /= 10;
+        int sum = 0;
+        int a = abs(x);
+        cout<<a<<'\n';
+        string b = to_string(a);
+        int i = b.length()-1;
+        if(x <= -2147483648 || x >= 2147483647){ return false; }
+        while(a > 0){
+            int r = a % 10;
+            sum += r*(pow(10, i));
+            a /= 10;
             i--;
         }
-        if(sum > 2147483647 || sum < -2147483648){
-            return 0;
-        }
-        // if(x < 0){
-        //     return sum*-1;
-        // }
-    return sum;
+        if(sum <= -2147483648 || sum >= 2147483647){ return false; }
+        if(x < 0){ return sum*-1; }
+        return sum;
     }
 };
 int main(){
     Solution ss;
-    int a = 1534236469;
+    int a = -120;
     cout<<ss.reverse(a);
     return 0;
 }
