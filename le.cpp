@@ -392,38 +392,41 @@ using namespace std;
 //     cout<<ss.addBinary(a, b);
 // }
 
-class Solution {
-public:
-    bool isOneBitCharacter(vector<int>& bits) {
-        reverse(bits.begin(), bits.end());
-        for(int i:bits){
-        cout<<bits[i]<<'\n';
-        }
-        int i = 0;
-        int a = bits.size();
-        while(a > 0){
-            if(bits[i] == 1){
-                cout<<bits[i]<<'\n';
-                bits.pop_back();
-                bits.pop_back();
-                i++;
-                a--;
-            }else{
-                bits.pop_back();
-            }
-            i++;
-            a--;
-            cout<<a<<'\n';
-        }
-        if(bits.empty()){
-            return true;
-        }
-        return false;
-    }
-};
+// class Solution {
+// public:
+//     bool isOneBitCharacter(vector<int>& bits) {
+//         // reverse(bits.begin(), bits.end());
+//         for(int i = 0; i < bits.size(); i++){
+//             cout<<bits[i]<<'\n';
+//         }
+//         int i = 0;
+//         int a = bits.size();
+//         while(a > 0){
+//             if(bits[i] == 1){
+//                 cout<<"1 -"<<bits[i]<<'\n';
+//                 bits.pop_back();
+//                 bits.pop_back();
+//                 i++;
+//                 a--;
+//                 if(bits.empty()){
+//                     return false;
+//                 }
+//             }else{
+//                 cout<<bits[i]<<'\n';
+//                 bits.pop_back();
+//             }
+//             i++;
+//             a--;
+//             if(bits.empty()){
+//                     return true;
+//                 }
+//             // cout<<a<<'\n';
+//         }
+//     }
+// };
 
-int main(){
-    Solution ss;
-    vector<int> b = {1, 0, 0};
-    cout<<ss.isOneBitCharacter(b);
-}
+// int main(){
+//     Solution ss;
+//     vector<int> b = {1, 0, 0};
+//     cout<<ss.isOneBitCharacter(b);
+// }
