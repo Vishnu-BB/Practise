@@ -27,6 +27,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -147,27 +148,33 @@ using namespace std;
 //     // }
 //     return 0;
 // }
+// #include <map>
 
 // class Solution {
 // public:
-//     int isHappy(int n) {
-//        int s = 0;
-//        int sum = 0;
-//     for(int i = 0; i < 2; i++){
-//         s = n % 10;
-//         // cout<<s<<'\n';
-//         sum += s*s;
-//         cout<<s<<'\n';
-//         n = n / 10;
-        
+//     bool isHappy(int n) {
+//         map<int, int> p ;
+//         while(n != 1){
+//             if(p.find(n) != p.end()){return false;}
+//             int a = sq(n);
+//             p[n] = a;
+//             n = a;
+//         }
+//         return n == 1;
 //     }
+//     int sq(int n){
+//         int sum = 0;
+//         while(n > 0){
+//             int s = n % 10;
+//             sum += s*s;
+//             n /= 10;
+//         }
 //         return sum;
 //     }
 // };
-
 // int main(){
 //     Solution ss;
-//     int s = 19;
+//     int s = 6;
 //     cout<<ss.isHappy(s);
 // }
 
@@ -193,7 +200,7 @@ using namespace std;
 //     vector<int> s = {-214748364,-2147483647, -21483648};
 //     cout<<ss.findPeakElement(s);
 // }
-#include <cmath>
+// #include <cmath>
 
 // class Solution {
 // public:
@@ -218,39 +225,57 @@ using namespace std;
 //     return sum;
 //     }
 // };
-#include <cstdint>
 
-class Solution {
-public:
-    int reverse(int x) {
+// #include <cstdint>
 
-        if(x > 2147483647 || x < -2147483648){
-            return 0;
-        }
-        long sum = 0;
-        int b = x;
-        if(x < 0){ b = x*-1; }
-        string a = to_string(b);
-        int i = a.length()-1;
+// class Solution {
+// public:
+//     int reverse(int x) {
+
+//         // if(x > 2147483647 || x < -2147483648){
+//         //     return 0;
+//         // }
+//         long sum = 0;
+//         int b = x;
+//         if(x < 0){ b = x*-1; }
+//         string a = to_string(b);
+//         int i = a.length()-1;
         
-        while(b > 0){
-            long r = b % 10;
-            sum += r*(pow(10,i));
-            b /= 10;
-            i--;
-        }
-        if(sum > 2147483647 || sum < -2147483648){
-            return 0;
-        }
-        // if(x < 0){
-        //     return sum*-1;
-        // }
-    return sum;
-    }
-};
+//         while(b > 0){
+//             long r = b % 10;
+//             sum += r*(pow(10,i));
+//             b /= 10;
+//             i--;
+//         }
+//         if(sum > 2147483647 || sum < -2147483648){
+//             return 0;
+//         }
+//         // if(x < 0){
+//         //     return sum*-1;
+//         // }
+//     return sum;
+//     }
+// };
+// int main(){
+//     Solution ss;
+//     int a = 1534236469;
+//     cout<<ss.reverse(a);
+//     return 0;
+// }
+
 int main(){
-    Solution ss;
-    int a = 1534236469;
-    cout<<ss.reverse(a);
-    return 0;
+    int n, m;
+    cout<< "n & m: ";
+
+    cin >> n >> m;
+
+    vector<vector<int>> adj(n+1);
+    for(int i = 0; i < m; i++){
+        int u, v;
+        cin>> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+        cout<<adj[u][v]<<'\n';
+    }
+
 }
