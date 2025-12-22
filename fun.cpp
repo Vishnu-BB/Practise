@@ -324,7 +324,7 @@ int main() {
  
   // int first[] = { 5, 10, 15, 20, 25 };
   
-  return  > 1534236469 ? ;
+  return 0;
 }
 // void swap (std::string &x, std::string &y){
 //     std::string temp;
