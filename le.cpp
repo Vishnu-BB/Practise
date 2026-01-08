@@ -438,26 +438,82 @@ using namespace std;
 //     cout<<ss.isOneBitCharacter(b);
 // }
 
+// class Solution {
+// public:
+//     vector<string> lengthOfLongestSubstring(string s) {
+//     // int lengthOfLongestSubstring(string s) {
+//     // string lengthOfLongestSubstring(string s) {
+//         string z = "";
+//         int c = 0;
+//         int ma = -1;
+//         int j = 0;
+//         vector<string> b;
+//         for(int i = 0; i < s.length(); i++){
+//             c = 0;
+//             while(j < s.length()){
+//                 if(z.find(s[j])){
+//                     z += s[j];
+//                     c++;
+//                     // cout<<z<<'\n';
+//                 }else{ 
+//                     b.push_back(z);
+//                     z = "";
+                    
+//                     // cout<<'y';
+//                     break;
+//                 }
+                
+//                 ma = max(ma, c);
+//                 j++;
+//             }
+//             b.push_back(z);
+            
+//         }
+//         return b;
+//     }
+// };
+
+// int main(){
+//     Solution ss;
+//     string b = "abcbad";
+//     // cout<<ss.lengthOfLongestSubstring(b);
+//     vector<string> s = ss.lengthOfLongestSubstring(b);
+//     cout<<s.size()<<"\n";
+//     for(string i:s){
+//         cout<<i<<'\n';
+//     }
+// }
+
 class Solution {
 public:
-    int countPrimes(int n) {
+    // int lengthOfLongestSubstring(string s) {
+    string lengthOfLongestSubstring(string s) {
+        string a = "";
         int c = 0;
-        // vector<int> p;
-        while(n > 0){
-            for(int i = 0; i < sqrt(n); i++){
-                if(i % n == 0){
-                    cout<<i<<'\n';
-                }
+        int ma = -1;
+        for(int i = 0; i < s.length(); i++){
+            a = "";
+            ma = max(ma, c);
+            c = 0;
+            for(int j = 0; j < s.length(); j++){
+                if(a.find(s[j])){
+                    a+=s[j];
+                    c++;
+                }else{ break; }
             }
-            n--;
         }
-        return c;
+        cout<<ma;
+        return a;
     }
 };
 
 int main(){
     Solution ss;
-    int n = 20;
-    cout<<ss.countPrimes(n);
-    return 0;
+    string b = "abacabd";
+    cout<<ss.lengthOfLongestSubstring(b);
+    // vector<string> s = ss.lengthOfLongestSubstring(b);
+    // cout<<s.size()<<"\n";
+    // for(string i:s){
+    //     cout<<i<<'\n';
+    // }
 }
