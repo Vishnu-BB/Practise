@@ -3,7 +3,7 @@
 *.o
 *.log
 *.tmp
-# *.a
+*.a
 ./benchmark/
 ./build/
 build/

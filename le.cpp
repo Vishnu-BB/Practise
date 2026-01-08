@@ -437,3 +437,27 @@ using namespace std;
 //     vector<int> b = {1, 0, 0};
 //     cout<<ss.isOneBitCharacter(b);
 // }
+
+class Solution {
+public:
+    int countPrimes(int n) {
+        int c = 0;
+        // vector<int> p;
+        while(n > 0){
+            for(int i = 0; i < sqrt(n); i++){
+                if(i % n == 0){
+                    cout<<i<<'\n';
+                }
+            }
+            n--;
+        }
+        return c;
+    }
+};
+
+int main(){
+    Solution ss;
+    int n = 20;
+    cout<<ss.countPrimes(n);
+    return 0;
+}
