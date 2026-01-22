@@ -1,4 +1,6 @@
 #include <iostream>
+#include <memory>
+#include <vector>
 
 using namespace std;
 
@@ -33,12 +35,45 @@ using namespace std;
 // }
 
 
-#include <unistd.h>
-#include <stdlib.h>
+// #include <unistd.h>
+// #include <stdlib.h>
+
+// int main(){
+//     void *p1 = malloc(1024*1024*10);
+//     sleep(5);
+//     free(p1);
+//     sleep(5);
+// }
+
+// int main(){
+//     int *num = new int(100);
+//     vector<int> *v = new vector<int>({2,3,5,6,7});
+    
+//     for(auto i : *v){
+//         cout<<i<<endl;
+//     }
+
+//     cout<<num<<endl;
+//     delete num;
+//     delete v;
+// }
+
+#include <iostream>
 
 int main(){
-    void *p1 = malloc(1024*1024*10);
-    sleep(5);
-    free(p1);
-    sleep(5);
+    // int value = 100;
+    // int* ptr = &value;
+
+    // std::cout << *ptr << std::endl;
+
+    // int num = 50;
+    // int* num_ptr = &num;
+    // int** num_ptr_ptr = &num_ptr;
+
+    // num = 99;
+    // std::cout<<**num_ptr_ptr<<std::endl;
+    
+    
+    return 0;
+    
 }
