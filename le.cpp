@@ -484,36 +484,56 @@ using namespace std;
 //     }
 // }
 
+// class Solution {
+// public:
+//     // int lengthOfLongestSubstring(string s) {
+//     string lengthOfLongestSubstring(string s) {
+//         string a = "";
+//         int c = 0;
+//         int ma = -1;
+//         for(int i = 0; i < s.length(); i++){
+//             a = "";
+//             ma = max(ma, c);
+//             c = 0;
+//             for(int j = 0; j < s.length(); j++){
+//                 if(a.find(s[j])){
+//                     a+=s[j];
+//                     c++;
+//                 }else{ break; }
+//             }
+//         }
+//         cout<<ma;
+//         return a;
+//     }
+// };
+
+
 class Solution {
 public:
-    // int lengthOfLongestSubstring(string s) {
-    string lengthOfLongestSubstring(string s) {
-        string a = "";
+    vector<string> summaryRanges(vector<int>& nums) {
+        vector<string> v;
         int c = 0;
-        int ma = -1;
-        for(int i = 0; i < s.length(); i++){
-            a = "";
-            ma = max(ma, c);
-            c = 0;
-            for(int j = 0; j < s.length(); j++){
-                if(a.find(s[j])){
-                    a+=s[j];
-                    c++;
-                }else{ break; }
+        for(int i = 0; i < nums.size()-1; i++){
+            if(c == 0){
+                v.push_back(to_string(nums[i]));
+                c++;
+            }
+            if(nums[i]+1 == nums[i+1]){
+                continue;
             }
         }
-        cout<<ma;
-        return a;
+        return v;
     }
 };
 
 int main(){
     Solution ss;
-    string b = "abacabd";
-    cout<<ss.lengthOfLongestSubstring(b);
+    vector<int> b = {1,2,3,4,6};
+    ss.summaryRanges(b);
+
     // vector<string> s = ss.lengthOfLongestSubstring(b);
     // cout<<s.size()<<"\n";
-    // for(string i:s){
-    //     cout<<i<<'\n';
-    // }
+    for(int i:b){
+        cout<<i<<'\n';
+    }
 }

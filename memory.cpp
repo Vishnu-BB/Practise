@@ -59,6 +59,7 @@ using namespace std;
 // }
 
 #include <iostream>
+#include <memory>
 
 int main(){
     // int value = 100;
@@ -72,7 +73,14 @@ int main(){
 
     // num = 99;
     // std::cout<<**num_ptr_ptr<<std::endl;
-    
+    int* ptr;
+    ptr = new int(10);
+    std::cout<<*ptr<<std::endl;
+    *ptr = 20;
+    std::cout<<ptr<<std::endl;
+    std::cout<<"vsihnu"<<std::endl;
+    delete ptr;
+    ptr = nullptr;
     
     return 0;
     

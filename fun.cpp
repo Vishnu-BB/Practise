@@ -5,6 +5,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 // void fun(std::string name, int age);
@@ -17,6 +18,16 @@ using namespace std;
 // void swap(std::string &x, std::string &y);
 
 int main() {
+    vector<int> v = {4,2,1,3,4}; // 2,1,3,4  3,4,5,1,2
+    vector<int>::iterator max_it = max_element(v.begin(), v.end());
+    
+    unordered_set<int> s;
+    for(int i : v){
+        s.insert(i);
+    }
+    for(int i : s){
+        cout<<i;
+    }
   // std::cout<<"changa\n"
   //             <<"pust name" << std::endl;
   // std::string first_name;
