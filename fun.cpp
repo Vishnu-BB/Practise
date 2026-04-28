@@ -9,7 +9,7 @@
 
 using namespace std;
 // void fun(std::string name, int age);
-
+int square(int n);
 // double square(int a);
 // double cube(int a);
 // std::string name = "Ankanna";
@@ -18,16 +18,16 @@ using namespace std;
 // void swap(std::string &x, std::string &y);
 
 int main() {
-    vector<int> v = {4,2,1,3,4}; // 2,1,3,4  3,4,5,1,2
-    vector<int>::iterator max_it = max_element(v.begin(), v.end());
+    // vector<int> v = {4,2,1,3,4}; // 2,1,3,4  3,4,5,1,2
+    // vector<int>::iterator max_it = max_element(v.begin(), v.end());
     
-    unordered_set<int> s;
-    for(int i : v){
-        s.insert(i);
-    }
-    for(int i : s){
-        cout<<i;
-    }
+    // unordered_set<int> s;
+    // for(int i : v){
+    //     s.insert(i);
+    // }
+    // for(int i : s){
+    //     cout<<i;
+    // }
   // std::cout<<"changa\n"
   //             <<"pust name" << std::endl;
   // std::string first_name;
@@ -335,6 +335,9 @@ int main() {
  
   // int first[] = { 5, 10, 15, 20, 25 };
   
+  int r = 19;
+  
+  cout<<square(r);;
   return 0;
 }
 // void swap (std::string &x, std::string &y){
@@ -371,3 +374,12 @@ int main() {
 //         std::cout<<"wait " << name<< " for" << 21 - age << "years";
 //     }
 // }
+    int square(int n){
+        int sum = 0;
+        while(n > 0){
+            int r = n % 10;
+            sum += (r*r);
+            n /= 10;
+        }
+        return sum;
+    }

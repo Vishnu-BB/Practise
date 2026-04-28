@@ -508,32 +508,48 @@ using namespace std;
 // };
 
 
+// class Solution {
+// public:
+//     vector<string> summaryRanges(vector<int>& nums) {
+//         vector<string> v;
+//         int c = 0;
+//         for(int i = 0; i < nums.size()-1; i++){
+//             if(c == 0){
+//                 v.push_back(to_string(nums[i]));
+//                 c++;
+//             }
+//             if(nums[i]+1 == nums[i+1]){
+//                 continue;
+//             }
+//         }
+//         return v;
+//     }
+// };
 class Solution {
 public:
-    vector<string> summaryRanges(vector<int>& nums) {
-        vector<string> v;
-        int c = 0;
-        for(int i = 0; i < nums.size()-1; i++){
-            if(c == 0){
-                v.push_back(to_string(nums[i]));
-                c++;
-            }
-            if(nums[i]+1 == nums[i+1]){
-                continue;
-            }
+    int maxArea(vector<int>& height) {
+        int maxi = 0;
+        int i = 0;
+        int j = height.size()-1;
+        while (i <= j){
+            int curr = min(height[i], height[j]) * abs(j - i);
+            cout<<curr<<endl;
+            maxi = max(curr, maxi);
+            i++;
+            j--;
         }
-        return v;
+        return maxi;
     }
 };
 
 int main(){
     Solution ss;
-    vector<int> b = {1,2,3,4,6};
-    ss.summaryRanges(b);
-
+    vector<int> b = {1,8,6,2,5,4,8,3};
+    ss.maxArea(b);
+    cout<<ss.maxArea(b);
     // vector<string> s = ss.lengthOfLongestSubstring(b);
     // cout<<s.size()<<"\n";
-    for(int i:b){
-        cout<<i<<'\n';
-    }
+    // for(int i:b){
+    //     cout<<i<<'\n';
+    // }
 }
